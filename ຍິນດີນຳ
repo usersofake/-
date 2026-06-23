@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="lo">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ລຸ້ນໂຊກຮັບເງິນລ້ານ</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f2f5;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        #gift-box {
+            font-size: 100px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        #gift-box:hover {
+            transform: scale(1.1);
+        }
+
+        #result {
+            display: none;
+            animation: popUp 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        h1 { color: #d32f2f; }
+        .amount { 
+            font-size: 3rem; 
+            color: #ff9800; 
+            font-weight: bold;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        .prank-note {
+            margin-top: 20px;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        @keyframes popUp {
+            0% { opacity: 0; transform: scale(0); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div id="gift-box" onclick="openGift()">🎁</div>
+        <div id="result">
+            <h1>ຍິນດີດ້ວຍ! ທ່ານໄດ້ຮັບລາງວັນໃຫຍ່</h1>
+            <div class="amount">1,000,000,000 ກີບ</div>
+            <p class="prank-note">(ນີ້ເປັນພຽງການຢອກຫຼິ້ນຊື່ໆເດີ້! 555+)</p>
+        </div>
+    </div>
+
+    <script>
+        function openGift() {
+            document.getElementById('gift-box').style.display = 'none';
+            document.getElementById('result').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
